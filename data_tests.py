@@ -4,11 +4,12 @@ import unittest
 
 class TestCases(unittest.TestCase):
     #### Time tests
-    def test_Time_1(self):
-        time = data.Time(7, 20, 1)
-        self.assertEqual(7, time.hour)
-        self.assertEqual(20, time.minute)
-        self.assertEqual(1, time.second)
+    def test__Time_1(self):
+        def test_Time_1(self):
+            time = data.Time(7, 20, 1)
+            self.assertEqual(7, time.hour)
+            self.assertEqual(20, time.minute)
+            self.assertEqual(1, time.second)
 
 
     def test_Time_2(self):
@@ -16,6 +17,20 @@ class TestCases(unittest.TestCase):
         self.assertEqual(4, time.hour)
         self.assertEqual(19, time.minute)
         self.assertEqual(45, time.second)
+
+    def test_Time_eq(self):
+        time1 = data.Time(2, 3, 21)
+        time2 = data.Time(6, 19, 10)
+        self.assertEqual(False, time1 == time2)
+
+    def test_Time_repr(self):
+        time = data.Time(5, 9, 3)
+        expected = "hour: 5, minute: 9, second: 3"
+        result = repr(time)
+        self.assertEqual(expected, result)
+
+
+
 
 
     #### Add tests for Time.__eq__
